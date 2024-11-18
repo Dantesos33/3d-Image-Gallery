@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    perspective: 1200px;
+    perspective-origin: center;
+    
+}
+
+.images{
+    position: relative;
+    height: 250px;
+    width: 250px;
+    transform-style: preserve-3d;
+    animation: rotation 8s linear infinite forwards;
+}
+
+@keyframes rotation {
+    0%{
+        transform: rotateY(0deg);
+    }
+
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+
+.images .item{
+    transform-style: preserve-3d;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    transform: rotateY(calc((var(--i) - 1) * (360 / var(--total) * 1deg))) translateZ(400px);
+}
+
+.images .item img{
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.title{
+    color: #fff;
+    position: fixed;
+    font-size: 2rem;
+    text-align: center;
+    animation: rotation 8s linear infinite reverse;
+}
