@@ -15,12 +15,22 @@ body{
     
 }
 
+button{
+    color: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+}
+
 .images{
     position: relative;
     height: 250px;
     width: 250px;
     transform-style: preserve-3d;
-    animation: rotation 8s linear infinite forwards;
+    /* animation: rotation 8s linear infinite forwards; */
+    transition: all 0.8s linear;
 }
 
 @keyframes rotation {
@@ -56,5 +66,28 @@ body{
     position: fixed;
     font-size: 2rem;
     text-align: center;
-    animation: rotation 8s linear infinite reverse;
+    /* animation: rotation 8s linear infinite reverse; */
 }
+
+.prev-btn, .next-btn{
+    color: white;
+    position: absolute;
+    top: 50%;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+
+.prev-btn:hover, .next-btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.next-btn{
+    right: 5%;
+}
+
+.prev-btn{
+    left: 5%;
+}
+
